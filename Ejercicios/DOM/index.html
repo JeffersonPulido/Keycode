@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM JS</title>
+    <style>
+      body {
+        background-color: #252525;
+        color: white;
+        margin: 5rem;
+      }
+      .parrafo1 {
+        font-size: 25px;
+        color: yellow;
+        font-weight: bold;
+      }
+      button {
+        padding: 2rem;
+        border-radius: 1rem;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Manipulacion del DOM con JS</h1>
+      <p id="miParrafo" class="parrafo1">Este es el texto original</p>
+    </header>
+    <section>
+      <button id="miBoton">Haz clic en mi!</button>
+    </section>
+
+    <script>
+        const boton = document.getElementById("miBoton");
+        const parrafo = document.getElementById("miParrafo");
+        const texto = "Hola soy nuevo"
+        boton.addEventListener("click", function () {
+            parrafo.innerHTML = 'Este es el texto nuevo' + texto
+
+            parrafo.style.color = 'blue'
+            parrafo.style.fontSize = '30px'
+        });
+    </script>
+  </body>
+</html>
