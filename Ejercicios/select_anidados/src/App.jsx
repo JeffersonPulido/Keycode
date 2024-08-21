@@ -1,4 +1,3 @@
-import "./App.css";
 import {Selects} from './components/Selects'
 
 const App = () => {
