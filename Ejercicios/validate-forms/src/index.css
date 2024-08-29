@@ -115,3 +115,8 @@ td {
     gap: 2rem;
   }
 }
+
+.p-error{
+  font-weight: bold;
+  color: rgb(159, 7, 7);
+}
