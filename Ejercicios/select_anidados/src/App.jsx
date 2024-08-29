@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Selects } from "./components/Selects";
 
 const App = () => {
@@ -7,6 +6,7 @@ const App = () => {
       <h1>Aprendizaje React</h1>
       <p>Selects Anidados</p>
       <hr />
+      {/* Llamamos nuestro componente personalizado */}
       <Selects />
     </div>
   );
