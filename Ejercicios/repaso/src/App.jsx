@@ -16,6 +16,18 @@ const App = () => {
     sumarContador,
   } = useContador();
 
+     //Spread operator
+        // const array1 = [1,2,3]
+        // const array2 = [4,5,6]
+
+        // const arraysCombinados = [...array1, ...array2]
+        // const ejercicioCarolina = [...array1, 7]
+        // console.log(ejercicioCarolina)
+        // const copiaArray1 = [...array1]
+        // console.log(arraysCombinados)
+        // console.log('original', array1)
+        // console.log('copia', copiaArray1)
+
   return (
     <>
       <div>
