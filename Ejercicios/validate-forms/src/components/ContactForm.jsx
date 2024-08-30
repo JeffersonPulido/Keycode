@@ -1,6 +1,7 @@
 import React from "react";
 import { useForms } from "../hooks/useForms";
 import { Loader } from './Loader';
+import Mail from './Mail';
 
 //Valores por defecto para el formulario
 const valorDefecto = {
@@ -44,11 +45,11 @@ const validaciones = (form) => {
 
 const ContactForm = () => {
   //Llamado a nuestro custom hook recibiendo mis variables y mis funciones
-  const { form, errores, cargando, manejadorCambios, manejadorSalidaInput, enviarFormulario } = useForms(
+  const { form, errores, cargando, bd, respuesta, manejadorCambios, manejadorSalidaInput, enviarFormulario } = useForms(
     valorDefecto,
     validaciones
   );
-
+  
   return (
     <>
       <h1>Formulario de contacto</h1>
@@ -114,6 +115,7 @@ const ContactForm = () => {
       </form>
       {/* Si cargando es True renderiza <Loader/> */}
       {cargando && <Loader/>}
+      {respuesta && <Mail datos={bd}/>}
     </>
   );
 };
