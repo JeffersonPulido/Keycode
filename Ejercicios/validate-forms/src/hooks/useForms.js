@@ -5,6 +5,8 @@ export const useForms = (valorDefecto, validaciones) => {
   const [form, setForm] = useState(valorDefecto);
   //Estado para almacenar los errores
   const [errores, setErrores] = useState({});
+  //Estado para Loader
+  const [cargando, setCargando] = useState(false)
 
   //Funcion que captura los cambios del input que la ejecuta
   const manejadorCambios = (element) => {
@@ -24,12 +26,46 @@ export const useForms = (valorDefecto, validaciones) => {
   }
 
   //Funcion que envia la data(form) del formulario
-
+  const enviarFormulario = (element) => {
+    // Prevenir accion del submit (Accion por defecto)
+    element.preventDefault();
+    //Validacion de errores
+    setErrores(validaciones(form))
+    //Si no existen errores continua a la API
+    if (Object.keys(errores).length === 0) {
+      //Esta cargando los datos 'simulado'
+      setCargando(true)
+      //Intenta hacer el siguiente bloque
+      try {
+        //Capturo la respuesta de axios y por medio de POST envio a url falsa mi body (Son los datos del form)
+        const status = axios.post('/api/falsa/usuario',{
+          body: form
+        })
+        //Valido si la respuesta de axios fue positiva para ejecutar algo
+        if(status === 201){
+          console.log('Se ha guardado exitosamente')
+          setCargando(false)
+          //Si la respuesta fue negativa, me salgo del programa
+        }else{
+          return
+        }
+        //Si falla hace este bloque
+      } catch (error) {
+        console.log('Ocurrio un error al guardar')
+      }
+    } else {
+      return;
+    }
+  }
 
   return {
+    //Devuelvo mis vaiables
     form,
     errores,
+    cargando,
+    //Devuelvo mis funciones
     manejadorCambios,
-    manejadorSalidaInput
+    manejadorSalidaInput,
+    enviarFormulario
   };
 };

@@ -47,7 +47,13 @@ input[type="reset"] {
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
+  cursor: pointer !important;
+}
+
+.deshabilitado{
+  cursor: default !important;
+  background-color: #444 !important;
+  color: white !important;
 }
 
 form {
