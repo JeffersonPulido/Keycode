@@ -11,32 +11,32 @@ const Navbar = () => {
   return (
     /** la clase myNav esta en index.css pero es tailwind! */
     <nav className="myNav">
-      <div className="container flex justify-between items-center">
+      <div className="container flex items-center justify-between">
         {/* Logo */}
-        <div className="font-bold text-2xl">MyLogo</div>
+        <div className="text-2xl font-bold">MyLogo</div>
         {/* Botones */}
-        <div className="space-x-4 hidden md:flex">
-          <button className="hover:text-gray-200 border rounded p-1 bg-white text-black hover:bg-black">
+        <div className="hidden space-x-4 md:flex">
+          <button className="p-1 text-black transition ease-in-out bg-white border rounded hover:text-gray-200 hover:bg-black">
             Inicio
           </button>
-          <button className="hover:text-gray-200 border rounded p-1 bg-white text-black hover:bg-black">
+          <button className="p-1 text-black transition ease-in-out bg-white border rounded hover:text-gray-200 hover:bg-black">
             Servicios
           </button>
-          <button className="hover:text-gray-200 border rounded p-1 bg-white text-black hover:bg-black">
+          <button className="p-1 text-black transition ease-in-out bg-white border rounded hover:text-gray-200 hover:bg-black">
             Nosotros
           </button>
-          <button className="hover:text-gray-200 border rounded p-1 bg-white text-black hover:bg-black">
+          <button className="p-1 text-black transition ease-in-out bg-white border rounded hover:text-gray-200 hover:bg-black">
             PQR
           </button>
-          <button className="hover:text-gray-200 border rounded p-1 bg-white text-black hover:bg-black">
+          <button className="p-1 text-black transition ease-in-out bg-white border rounded hover:text-gray-200 hover:bg-black">
             Contacto
           </button>
-          <button className="hover:text-gray-200 border rounded p-1 bg-white text-black hover:bg-black">
+          <button className="p-1 text-black transition ease-in-out bg-white border rounded hover:text-gray-200 hover:bg-black">
             Ubicacion
           </button>
         </div>
         {/* Usuario */}
-        <div className="hidden md:flex text-2xl border rounded-2xl p-2">
+        <div className="hidden p-2 text-2xl border md:flex rounded-2xl">
           <i class="fa-solid fa-user"></i>
         </div>
         {/* Menu hamburguesa para celular */}
@@ -47,23 +47,23 @@ const Navbar = () => {
         </div>
 
         {estaAbierto && (
-          <div className="md:hidden absolute top-16 left-0 w-full bg-blue-600 text-center">
-            <button className="block w-full py-2 hover:text-gray-200 rounded p-1 ">
+          <div className="absolute left-0 w-full text-center bg-blue-600 md:hidden top-16">
+            <button className="block w-full p-1 py-2 rounded hover:text-gray-200 ">
               Inicio
             </button>
-            <button className="block w-full py-2 hover:text-gray-200 rounded p-1 ">
+            <button className="block w-full p-1 py-2 rounded hover:text-gray-200 ">
               Servicios
             </button>
-            <button className="block w-full py-2 hover:text-gray-200 rounded p-1 ">
+            <button className="block w-full p-1 py-2 rounded hover:text-gray-200 ">
               Nosotros
             </button>
-            <button className="block w-full py-2 hover:text-gray-200 rounded p-1 ">
+            <button className="block w-full p-1 py-2 rounded hover:text-gray-200 ">
               PQR
             </button>
-            <button className="block w-full py-2 hover:text-gray-200 rounded p-1 ">
+            <button className="block w-full p-1 py-2 rounded hover:text-gray-200 ">
               Contacto
             </button>
-            <button className="block w-full py-2 hover:text-gray-200 rounded p-1 ">
+            <button className="block w-full p-1 py-2 rounded hover:text-gray-200 ">
               Ubicacion
             </button>
           </div>

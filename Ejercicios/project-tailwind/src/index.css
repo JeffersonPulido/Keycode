@@ -8,6 +8,6 @@
 
 /** Tailwind en CSS y combinado con CSS nativo */
 .myNav {
-  @apply bg-blue-600 text-white p-4 flex justify-between items-center;
-  color: red;
+  @apply flex items-center justify-between p-4 text-white bg-blue-600;
+  /* color: red; */
 }
