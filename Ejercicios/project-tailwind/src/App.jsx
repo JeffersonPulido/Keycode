@@ -1,14 +1,15 @@
-import Navbar from './components/Navbar'
-import Welcome from './components/Welcome'
+import Navbar from "./components/Navbar";
+import Welcome from "./components/Welcome";
 
 function App() {
-  
   return (
     <>
-      <Navbar/>
-      <Welcome/>
+      {/* Navbar Component */}
+      <Navbar />
+      {/* Seccion Bienvenida component */}
+      <Welcome />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
