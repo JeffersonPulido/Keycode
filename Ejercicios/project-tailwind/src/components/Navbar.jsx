@@ -9,7 +9,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+    /** la clase myNav esta en index.css pero es tailwind! */
+    <nav className="myNav">
       <div className="container flex justify-between items-center">
         {/* Logo */}
         <div className="font-bold text-2xl">MyLogo</div>
