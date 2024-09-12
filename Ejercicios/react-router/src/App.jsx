@@ -7,6 +7,10 @@ import {
   Productos,
   ProductosDetalle,
   Servicios,
+  ServiciosDetalle,
+  ServiciosGarantias,
+  ServiciosHome,
+  ServiciosLista,
 } from "./pages";
 import Menu from "./components/Menu";
 import "./App.css";
@@ -36,6 +40,24 @@ function App() {
     },
   ]);
 
+  const [servicios, setServicios] = useState([
+    {
+      id: 1,
+      nombre: "Luz",
+      precio: 100,
+    },
+    {
+      id: 2,
+      nombre: "Agua",
+      precio: 200,
+    },
+    {
+      id: 3,
+      nombre: "Gas",
+      precio: 300,
+    }
+  ]);
+
   return (
     <>
       {/* Enrutador general */}
@@ -58,7 +80,28 @@ function App() {
             path="/productos/:id"
             element={<ProductosDetalle productos={productos} />}
           />
-          <Route path="/servicios" element={<Servicios />} />
+          {/* Pagina general de servicios */}
+          <Route path="/servicios" element={<Servicios />}>
+            {/* Ruta inicial para la pagina de servicios /servicios/ */}
+            <Route index element={<ServiciosHome />} />
+            {/* Ruta de servcios de garantias /servicios/garantia */}
+            <Route path="garantia" element={<ServiciosGarantias />} />
+            {/* Ruta para la lista de servicios /servicios/lista */}
+            <Route
+              path="lista"
+              element={<ServiciosLista servicios={servicios} />}
+            />
+            {/* Ruta individual del servicio /servicios/:id */}
+            <Route
+              path=":id"
+              element={
+                <>
+                  <ServiciosLista servicios={servicios} />
+                  <ServiciosDetalle servicios={servicios} />
+                </>
+              }
+            />
+          </Route>
           {/* Ruta de error */}
           <Route path="*" element={<Error404 />} />
         </Routes>
