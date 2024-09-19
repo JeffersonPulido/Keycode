@@ -15,6 +15,7 @@ import {
 import Menu from "./components/Menu";
 import "./App.css";
 import { useState } from "react";
+import RutaProtegida from "./components/RutaProtegida";
 
 function App() {
   const [productos, setProductos] = useState([
@@ -55,7 +56,7 @@ function App() {
       id: 3,
       nombre: "Gas",
       precio: 300,
-    }
+    },
   ]);
 
   return (
@@ -73,7 +74,11 @@ function App() {
           {/* Pagina de productos generales */}
           <Route
             path="/productos"
-            element={<Productos productos={productos} />}
+            element={
+              <RutaProtegida isAuthenticated={true}>
+                <Productos productos={productos} />
+              </RutaProtegida>
+            }
           />
           {/* Pagina individual del producto */}
           <Route
