@@ -33,10 +33,10 @@ function App() {
   return (
     <>
       <h1>Programacion asincrona</h1>
-      <caption>Promesas</caption>
+      <p>Promesas</p>
       <p>En consola</p>
       <hr />
-      <caption>Async / Await</caption>
+      <p>Async / Await</p>
       <button onClick={obtenerDatos}>
         Consumir API
       </button>
