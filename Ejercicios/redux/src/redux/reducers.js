@@ -24,9 +24,13 @@ const reducer = (state = initialState, action) => {
       localStorage.setItem("tasks", JSON.stringify(newTask));
       return { ...state, tasks: newTask };
     case "DELETE_TASK":
-      break;
+      const filteredTasks = state.tasks.filter(task => task.id !== action.payload)
+      localStorage.setItem('tasks', JSON.stringify(filteredTasks))
+      return {...state, tasks: filteredTasks}
     case "UPDATE_TASK":
-      break;
+      const updatedTasks = state.tasks.map(task => task.id === action.payload.id ? action.payload : task)
+      localStorage.setItem('tasks', JSON.stringify(updatedTasks))
+      return {...state, tasks: updatedTasks}
     default:
         return state;
   }

@@ -1,17 +1,19 @@
-import './App.css'
-import AddTask from './components/AddTask'
-import TaskList from './components/TaskList'
+import AddTask from "./components/AddTask";
+import TaskList from "./components/TaskList";
 
 function App() {
-
   return (
-    <>
-      <h1>Administrador de Tareas</h1>
+    <div className="flex flex-col p-5 m-5">
+      <h1 className="text-2xl text-center text-white">
+        Administrador de Tareas
+      </h1>
       {/* Componente para agregar tareas */}
-      <AddTask/>
-      <TaskList/>
-    </>
-  )
+      <div className="justify-center m-auto">
+        <AddTask />
+        <TaskList />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
