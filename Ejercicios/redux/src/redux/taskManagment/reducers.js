@@ -17,7 +17,7 @@ const initialState = {
   tasks: JSON.parse(localStorage.getItem("tasks")) ?? [],
 };
 
-const reducer = (state = initialState, action) => {
+const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TASK":
       const newTask = [...state.tasks, action.payload];
@@ -36,4 +36,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer
+export default taskReducer

@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteTask, updateTask } from "../redux/actions";
+import { deleteTask, updateTask } from "../redux/taskManagment/actions";
 
 const TaskList = () => {
   //Busca todas las tareas que existan en Redux (global state / store)
-  const tasks = useSelector((state) => state.tasks);
+  const {tasks} = useSelector((state) => state.tasks);
   //Hace la solicitud al reducer de hacer las actiones que se le pasen
   const dispatch = useDispatch();
   //Funcion para realizar la solicitud por medio del dispatch de elminar la tarea que corresponda al ID que le paso

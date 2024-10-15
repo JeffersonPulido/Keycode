@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../redux/actions";
+import { addTask } from "../redux/taskManagment/actions";
 
 const AddTask = () => {
   //Hace la solicitud al reducer de hacer la action addTask
