@@ -8,7 +8,7 @@ export const updateUser = (user) => ({
     payload: user
 })
 
-export const deteleUser = (userID) => ({
+export const deleteUser = (userID) => ({
     type: 'DELETE_USER',
     payload: userID
 })
